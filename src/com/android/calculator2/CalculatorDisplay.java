@@ -48,6 +48,7 @@ class CalculatorDisplay extends ViewSwitcher {
     TranslateAnimation inAnimDown;
     TranslateAnimation outAnimDown;
 
+    private Logic mLogic;
     private int mMaxDigits = DEFAULT_MAX_DIGITS;
 
     public CalculatorDisplay(Context context, AttributeSet attrs) {
@@ -60,6 +61,7 @@ class CalculatorDisplay extends ViewSwitcher {
     }
 
     protected void setLogic(Logic logic) {
+        mLogic = logic;
         NumberKeyListener calculatorKeyListener =
             new NumberKeyListener() {
                 public int getInputType() {
